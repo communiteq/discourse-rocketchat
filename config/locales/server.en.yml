@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    discourse_rocketchat_enabled: "Enable RocketChat integration."
+    discourse_rocketchat_host: "Host where RocketChat is running.<br>Do not specify the protocol like https://, enter the host name only."

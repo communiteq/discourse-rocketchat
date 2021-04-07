@@ -1,0 +1,5 @@
+plugins:
+  discourse_rocketchat_enabled:
+    default: false
+  discourse_rocketchat_host:
+    default: ""
