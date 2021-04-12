@@ -3,3 +3,13 @@ plugins:
     default: false
   discourse_rocketchat_host:
     default: ""
+    client: true
+  discourse_rocketchat_default_channel:
+    client: true
+    default: "general"
+  discourse_rocketchat_show_menu_for_groups:
+    client: true
+    type: group_list
+    list_type: compact
+    default: ""
+    allow_any: false
