@@ -8,6 +8,12 @@ enabled_site_setting :discourse_rocketchat_enabled
 
 PLUGIN_NAME ||= "discourse-rocketchat".freeze
 
+register_asset 'stylesheets/common/rocketchat.scss'
+register_asset 'stylesheets/desktop/rocketchat.scss', :desktop
+register_asset 'stylesheets/mobile/rocketchat.scss', :mobile
+
+register_svg_icon "fab-rocketchat" if respond_to?(:register_svg_icon)
+
 after_initialize do
   module ::DiscourseRocketchat
     class Engine < ::Rails::Engine

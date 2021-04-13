@@ -1,6 +1,9 @@
 plugins:
   discourse_rocketchat_enabled:
     default: false
+  discourse_rocketchat_title:
+    default: "Chat"
+    client: true
   discourse_rocketchat_host:
     default: ""
     client: true

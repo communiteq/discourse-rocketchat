@@ -1,6 +1,7 @@
 en:
   site_settings:
     discourse_rocketchat_enabled: "Enable RocketChat integration."
+    discourse_rocketchat_title: "Title for chat window."
     discourse_rocketchat_host: "Host where RocketChat is running.<br>Do not specify the protocol like https://, enter the host name only."
     discourse_rocketchat_default_channel: "Default RocketChat channel."
     discourse_rocketchat_show_menu_for_groups: "Show the RocketChat menu for users in these groups. Hide it for others."
