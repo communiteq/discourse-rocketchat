@@ -1,16 +1,18 @@
-<div id="rocketchat-embed" class={{classList}}>
-  <div class="rocketchat-header">
-    {{chatboxTitle}}
-    {{#if site.mobileView}}
-      <button type="button" class="hidebutton" onclick={{action "togglePopup"}}>
-          <svg id="closex" viewbox="0 0 16 16">
-              <path class="close-x" d="M 5,5 L 15,15 M 15,5 L 5,15" />
-          </svg>
-      </button>
-    {{else}}
-      <button type="button" class="chatbutton" onclick={{action "togglePopup"}}>{{ labelOC }}</button>
-    {{/if}}
+{{#if showRocketChat}}
+  <div id="rocketchat-embed" class={{classList}}>
+    <div class="rocketchat-header">
+      {{chatboxTitle}}
+      {{#if site.mobileView}}
+        <button type="button" class="hidebutton" onclick={{action "togglePopup"}}>
+            <svg id="closex" viewbox="0 0 16 16">
+                <path class="close-x" d="M 5,5 L 15,15 M 15,5 L 5,15" />
+            </svg>
+        </button>
+      {{else}}
+        <button type="button" class="chatbutton" onclick={{action "togglePopup"}}>{{ labelOC }}</button>
+      {{/if}}
+    </div>
+    <div id="rocketchat-container" class="rocketchat-container">
+    </div>
   </div>
-  <div id="rocketchat-container" class="rocketchat-container">
-  </div>
-</div>
+{{/if}}

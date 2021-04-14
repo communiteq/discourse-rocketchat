@@ -44,6 +44,9 @@ export default Ember.Component.extend({
       return "Open";
     }
   }),
+  showRocketChat: (function() {
+    return this.currentUser && this.currentUser.trust_level >= this.siteSettings.discourse_rocketchat_min_trust_level;
+  }).property(),
   chatboxTitle: (function() {
     return this.siteSettings.discourse_rocketchat_title;
   }).property(),

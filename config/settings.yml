@@ -10,6 +10,10 @@ plugins:
   discourse_rocketchat_default_channel:
     client: true
     default: "general"
+  discourse_rocketchat_min_trust_level:
+    client: true
+    default: 2
+    enum: "TrustLevelSetting"
   discourse_rocketchat_show_menu_for_groups:
     client: true
     type: group_list

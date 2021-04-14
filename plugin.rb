@@ -37,15 +37,20 @@ after_initialize do
       end
 
       if current_user
-        ticket = SecureRandom.hex(16)
-        info = {
-          service: service,
-          username: current_user.username,
-          name: current_user.name || current_user.username,
-          email: current_user.email
-        }
-        Discourse.redis.setex("cas_#{ticket}", 600, info.to_json)
-        redirect_to "#{params[:service]}?ticket=#{ticket}"
+        if current_user.trust_level >= SiteSetting.discourse_rocketchat_min_trust_level
+          ticket = SecureRandom.hex(16)
+          info = {
+            service: service,
+            username: current_user.username,
+            name: current_user.name || current_user.username,
+            email: current_user.email
+          }
+          Discourse.redis.setex("cas_#{ticket}", 600, info.to_json)
+          redirect_to "#{params[:service]}?ticket=#{ticket}"
+        else
+          render plain: "You need to be on trust level #{SiteSetting.discourse_rocketchat_min_trust_level} or higher to use the chat. Please contact your community manager.", status: 403
+          return
+        end
       else # not logged in
         cookies[:cas_payload] = request.query_string
         redirect_to path('/login')
