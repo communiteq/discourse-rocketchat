@@ -1,6 +1,6 @@
 {{#if showRocketChat}}
   <div id="rocketchat-embed" class={{classList}}>
-    <div class="rocketchat-header">
+    <div class="rocketchat-header" onclick={{action "togglePopupBar"}}>
       {{chatboxTitle}}
       {{#if site.mobileView}}
         <button type="button" class="hidebutton" onclick={{action "togglePopup"}}>

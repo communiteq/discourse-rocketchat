@@ -1,10 +1,10 @@
 import Ember from "ember";
 import { set, get, computed } from "@ember/object";
+import I18n from "I18n";
 
 export default Ember.Component.extend({
   isLoaded: false,
   isOpen: false,
-  labelOC: 'Open',
   didInsertElement() {
     this.appEvents.on("rocketchat-toggle", () => {
       this.toggleChat();
@@ -38,10 +38,10 @@ export default Ember.Component.extend({
   }),
   labelOC: computed('isOpen', function() {
     if (this.get('isOpen')) {
-      return "Close";
+      return I18n.t('rocketchat-plugin.close');
     }
     else {
-      return "Open";
+      return I18n.t('rocketchat-plugin.open');
     }
   }),
   showRocketChat: (function() {
@@ -59,8 +59,14 @@ export default Ember.Component.extend({
     }
   }),
   actions: {
-    togglePopup() {
+    togglePopup(event) {
       this.toggleChat();
+      event.stopPropagation();
+    },
+    togglePopupBar() {
+      if(this.siteSettings.discourse_rocketchat_click_entire_bar) {
+        this.toggleChat();
+      }
     }
   }
 });

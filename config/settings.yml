@@ -14,6 +14,9 @@ plugins:
     client: true
     default: 2
     enum: "TrustLevelSetting"
+  discourse_rocketchat_click_entire_bar:
+    client: true
+    default: false
   discourse_rocketchat_show_menu_for_groups:
     client: true
     type: group_list
