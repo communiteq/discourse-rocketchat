@@ -23,6 +23,9 @@
     border: 1px solid $primary-medium;
     text-align: left;
     color: $primary;
+}
+
+.rocketchat-header .chatbutton, #rocketchat-embed.clickable-bar .rocketchat-header {
     cursor: pointer;
 }
 

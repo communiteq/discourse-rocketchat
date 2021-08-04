@@ -51,12 +51,14 @@ export default Ember.Component.extend({
     return this.siteSettings.discourse_rocketchat_title;
   }).property(),
   classList: computed('isOpen', function() {
+    var classes = 'collapsible ';
+    if (this.siteSettings.discourse_rocketchat_click_entire_bar) {
+      classes += 'clickable-bar '
+    }
     if (this.get('isOpen')) {
-      return "collapsible active-chat";
+      classes += 'active-chat ';
     }
-    else {
-      return "collapsible";
-    }
+    return classes;
   }),
   actions: {
     togglePopup(event) {
