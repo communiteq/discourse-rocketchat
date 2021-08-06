@@ -85,7 +85,7 @@ In order to integrate the two platforms, Discourse must have control over the lo
 #### Administration - Settings - Accounts - Avatar
 
 Rocket.Chat can use Discourse's avatars.
-Make sure to replace `forum.example.com` with the name of your forum twice.
+Make sure to replace `forum.example.com` with the name of your forum.
 
 * **Avatar External Provider URL**: `https://forum.example.com/rocketchat/avatar/{username}.png`
 
