@@ -23,6 +23,20 @@ after_initialize do
   end
 
   require_dependency "application_controller"
+
+  class DiscourseRocketchat::AvatarController < ::ApplicationController
+    requires_plugin PLUGIN_NAME
+
+    def avatar
+      user = User.find_by(username_lower: params[:username].downcase)
+      if user
+        return redirect_to Discourse.base_url + user.avatar_template.sub('{size}','200') 
+      else
+        return redirect_to Discourse.base_url + '/images/avatar.png'
+      end
+    end
+  end
+
   class DiscourseRocketchat::AuthController < ::ApplicationController
     requires_plugin PLUGIN_NAME
 
@@ -96,6 +110,7 @@ after_initialize do
   DiscourseRocketchat::Engine.routes.draw do
     get "/login", to: "auth#login", defaults: { format: :json }
     get "/proxyValidate", to: "auth#proxy_validate", defaults: { format: :json }
+    get '/avatar/:username.png' => 'avatar#avatar', defaults: { format: :json }
   end
 
   Discourse::Application.routes.append do
