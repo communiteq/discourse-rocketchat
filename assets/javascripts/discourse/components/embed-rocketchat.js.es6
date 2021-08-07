@@ -1,4 +1,3 @@
-import Ember from "ember";
 import { set, get, computed } from "@ember/object";
 import I18n from "I18n";
 
