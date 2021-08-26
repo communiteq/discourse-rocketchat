@@ -54,6 +54,7 @@ Replace `forum.example.com` with the name of your forum.
 * **CAS Version**: 2.0
 * **Trust CAS username**: enabled
 * **Allow user creation**: enabled
+* **Enabled**: enabled
 
 #### Administration - Settings - CAS - Attribute Handling
 
