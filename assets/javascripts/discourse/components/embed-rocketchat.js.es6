@@ -24,9 +24,15 @@ export default Ember.Component.extend({
         }
 
         var content = document.getElementById('rocketchat-container');
+	      var baseURL;
+        if (this.siteSettings.discourse_rocketchat_default_channel == '') {
+          baseURL = '/home'
+        } else {
+          baseURL = '/channel/' + this.siteSettings.discourse_rocketchat_default_channel
+      	}
         content.innerHTML = '<iframe src="https://'
           + this.siteSettings.discourse_rocketchat_host
-          + '/channel/' + this.siteSettings.discourse_rocketchat_default_channel
+          + baseURL
           + embedParam
           + '" class="rocketchat-embed"></iframe>';
         this.isLoaded = true;

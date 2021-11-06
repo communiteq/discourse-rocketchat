@@ -3,7 +3,7 @@ en:
     discourse_rocketchat_enabled: "Enable RocketChat integration."
     discourse_rocketchat_title: "Title for chat window."
     discourse_rocketchat_host: "Host where RocketChat is running.<br>Do not specify the protocol like https://, enter the host name only."
-    discourse_rocketchat_default_channel: "Default RocketChat channel."
+    discourse_rocketchat_default_channel: "Default RocketChat channel (leave empty for home page)."
     discourse_rocketchat_min_trust_level: "Minimum trust level to show RocketChat for."
     discourse_rocketchat_show_menu_for_groups: "Show the RocketChat menu for users in these groups. Hide it for others."
     discourse_rocketchat_click_entire_bar: "Make the entire title bar clickable to expand or close."
