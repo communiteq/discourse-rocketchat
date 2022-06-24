@@ -1,6 +1,6 @@
 # name: discourse-rocketchat
 # about: Discourse RocketChat integration plugin
-# version: 1.0
+# version: 1.1
 # authors: richard@communiteq.com
 # url: https://www.communiteq.com/
 
@@ -118,7 +118,7 @@ after_initialize do
   end
 
   module ::PatchSessionController
-    def login(user)
+    def login(user, *more)
       if payload = cookies.delete(:cas_payload)
         # we need to copy a few lines from the original method since we cannot monkey patch in the middle :(
         # https://github.com/discourse/discourse/blob/master/app/controllers/session_controller.rb#L603-L606
